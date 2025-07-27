@@ -5,4 +5,4 @@
 1. افتح CloudStream
 2. انتقل إلى: "الإضافات" → "مستودعات"
 3. اضغط "إضافة مستودع"
-4. أضف هذا الرابط:
+4. أضف هذا الرابط:https://raw.githubusercontent.com/zoomq8/arb_film_series/main/providers.json
