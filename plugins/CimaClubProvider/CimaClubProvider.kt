@@ -62,3 +62,21 @@ class CimaClubProvider : MainAPI() {
         isCasting: Boolean,
         subtitleCallback: (SubtitleFile) -> Unit,
         callback: (ExtractorLink) -> Unit
+    ): Boolean {
+        val doc = app.get(data).document
+        val iframeUrl = doc.select("iframe").mapNotNull { it.attr("src") }.firstOrNull() ?: return false
+        val response = app.get(iframeUrl).text
+        val videoUrl = Regex("file:\\s*\"(.*?)\"").find(response)?.groupValues?.get(1) ?: return false
+        callback(
+            ExtractorLink(
+                name = this.name,
+                source = "CimaClub",
+                url = videoUrl,
+                referer = data,
+                quality = Qualities.Unknown.value,
+                isM3u8 = videoUrl.endsWith(".m3u8")
+            )
+        )
+        return true
+    }
+}
