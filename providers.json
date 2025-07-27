@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Akwam",
+    "path": "plugins/AkwamProvider/AkwamProvider.kt",
+    "type": "provider"
+  },
+  {
+    "name": "CimaClub",
+    "path": "plugins/CimaClubProvider/CimaClubProvider.kt",
+    "type": "provider"
+  }
+]
